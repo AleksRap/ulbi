@@ -6,5 +6,6 @@ export function buildDevServer(): DevServerConfiguration {
     port: process.env.PORT,
     open: true,
     historyApiFallback: true,
+    hot: true,
   }
 }

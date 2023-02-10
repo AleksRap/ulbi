@@ -1,0 +1,33 @@
+.sidebar {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+
+  padding: 10px;
+  background-color: var(--inverted-bg-color);
+
+  transition: all .2s ease-in;
+}
+
+.sidebar.isCollapsed {
+  width: var(--sidebar-width-collapsed);
+  transition: all .2s ease-in;
+}
+
+.switchers {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+
+  margin-top: auto;
+}
+
+.btn {
+  width: 60px;
+  margin-left: auto;
+}

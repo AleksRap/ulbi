@@ -1,7 +1,7 @@
-import {FC, PropsWithChildren} from 'react';
-import { classNames } from "shared/lib";
+import { FC, PropsWithChildren } from 'react';
+import { classNames } from 'shared/lib';
 import cls from './AppLink.module.scss';
-import {Link, LinkProps} from "react-router-dom";
+import { Link, LinkProps } from 'react-router-dom';
 
 export enum AppLinkVariant {
   PRIMARY = 'primary',
@@ -20,9 +20,12 @@ export const AppLink: FC<PropsWithChildren<AppLinkProps>> = ({
   variant = AppLinkVariant.PRIMARY,
   ...otherProps
 }) => {
-
   return (
-    <Link {...otherProps} className={classNames(cls.appLink, {}, [className, cls[variant]])}>
+    <Link
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...otherProps}
+      className={classNames(cls.appLink, {}, [className, cls[variant]])}
+    >
       {children}
     </Link>
   );

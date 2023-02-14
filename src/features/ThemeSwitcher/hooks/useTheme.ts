@@ -1,9 +1,5 @@
-import {useContext} from "react";
-import {
-  LOCAL_STORAGE_THEME_KEY,
-  Theme,
-  ThemeContext
-} from "../provider/ThemeContext";
+import { useContext } from 'react';
+import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from '../provider/ThemeContext';
 
 interface UseThemeResult {
   toggleTheme: VoidFunction;
@@ -20,7 +16,7 @@ export function useTheme(): UseThemeResult {
 
       return newTheme;
     });
-  }
+  };
 
   return { theme, toggleTheme };
 }

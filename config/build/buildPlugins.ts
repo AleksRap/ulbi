@@ -1,15 +1,16 @@
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
-import webpack, {WebpackPluginInstance} from 'webpack';
-import {BuildOptions} from "./types/config";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import webpack, { WebpackPluginInstance } from 'webpack';
+import { BuildOptions } from './types/config';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-export function buildPlugins({ paths }: BuildOptions): WebpackPluginInstance[] {
+export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
+  const { paths, isAnalyze } = options;
 
   return [
     new HTMLWebpackPlugin({
-      template: paths.html
+      template: paths.html,
     }),
     new webpack.ProgressPlugin(),
     new Dotenv({ path: paths.dotenv }),
@@ -17,6 +18,6 @@ export function buildPlugins({ paths }: BuildOptions): WebpackPluginInstance[] {
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css',
     }),
-    new ReactRefreshWebpackPlugin(),
-  ]
+    isAnalyze && new BundleAnalyzerPlugin(),
+  ].filter(Boolean);
 }

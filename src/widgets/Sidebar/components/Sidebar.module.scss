@@ -6,16 +6,16 @@
 
   width: var(--sidebar-width);
   height: calc(100vh - var(--navbar-height));
-
   padding: 10px;
+
   background-color: var(--inverted-bg-color);
 
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .sidebar.isCollapsed {
   width: var(--sidebar-width-collapsed);
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .switchers {

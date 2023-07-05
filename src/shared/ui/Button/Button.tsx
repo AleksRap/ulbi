@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
-import { classNames } from 'shared/lib';
+import cn from 'classnames';
 import cls from './Button.module.scss';
 
 export enum ButtonVariant {
@@ -23,7 +23,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
       /* eslint-disable-next-line react/jsx-props-no-spreading */
       {...otherProps}
       type='button'
-      className={classNames(cls.button, {}, [className, cls[variant]])}
+      className={cn(cls.button, className, cls[variant])}
     >
       {children}
     </button>

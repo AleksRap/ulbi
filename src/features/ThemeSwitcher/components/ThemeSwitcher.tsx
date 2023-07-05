@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { classNames } from 'shared/lib';
+import cn from 'classnames';
 import cls from './ThemeSwitcher.module.scss';
 import { useTheme } from '../hooks/useTheme';
 import ThemeIcon from '../assets/icons/theme.svg';
@@ -15,10 +15,10 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
   return (
     <Button
       variant={ButtonVariant.CLEAR}
-      className={classNames(className)}
+      className={className}
       onClick={toggleTheme}
     >
-      <ThemeIcon className={classNames(cls.icon, {}, [cls[theme]])} />
+      <ThemeIcon className={cn(cls.icon, cls[theme])} />
     </Button>
   );
 };

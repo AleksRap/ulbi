@@ -15,33 +15,28 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 7
-
       - name: Staring Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
 
       - name: Install modules
-        run: pnpm i --frozen-lockfile
+        run: npm i --legacy-peer-deps
 
       - name: Build project
-        run: pnpm run build
+        run: npm run build
 
       - name: Linting typescript
-        run: pnpm run eslint
+        run: npm run eslint
 
       - name: Linting css
-        run: pnpm run stylelint
+        run: npm run stylelint
 
       - name: Unit testing
-        run: pnpm run test:unit
+        run: npm run test:unit
 
       - name: Build storybook
-        run: pnpm run storybook:build
+        run: npm run storybook:build
 
       - name: Screenshots testing
-        run: pnpm run test:screenshots:ci
+        run: npm run test:screenshots:ci

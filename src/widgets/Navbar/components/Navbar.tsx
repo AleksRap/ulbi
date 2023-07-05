@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { AppRoutes, RoutePath } from 'shared/config';
-import { classNames } from 'shared/lib';
+import cn from 'classnames';
 import cls from './Navbar.module.scss';
 import { AppLink, AppLinkVariant } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
@@ -13,7 +13,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
   const { t } = useTranslation();
 
   return (
-    <div className={classNames(cls.navbar, {}, [className])}>
+    <div className={cn(cls.navbar, className)}>
       <div className={cls.links}>
         <AppLink
           variant={AppLinkVariant.SECONDARY}

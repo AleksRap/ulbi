@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { classNames } from 'shared/lib';
+import cn from 'classnames';
 import cls from './Sidebar.module.scss';
 import { ThemeSwitcher, LangSwitcher } from 'features';
 import { Button, ButtonVariant } from 'shared/ui';
@@ -20,7 +20,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
   return (
     <div
       data-testid='sidebar'
-      className={classNames(cls.sidebar, { [cls.isCollapsed]: isCollapsed }, [className])}
+      className={cn(cls.sidebar, isCollapsed && cls.isCollapsed, className)}
     >
       <Button
         variant={ButtonVariant.CLEAR}

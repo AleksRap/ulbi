@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { classNames } from 'shared/lib';
+import cn from 'classnames';
 import { Navbar, Sidebar } from 'widgets';
 import { routeConfig } from 'app/config/routeConfig';
 import { useTheme } from 'features';
@@ -9,10 +9,9 @@ const App = () => {
   const { theme } = useTheme();
 
   return (
-    <div className={classNames('app', {}, [theme])}>
+    <div className={cn('app', {}, [theme])}>
       <Suspense>
         <Navbar />
-
         <div className='content-page'>
           <Sidebar />
           <AppRouter config={routeConfig} />

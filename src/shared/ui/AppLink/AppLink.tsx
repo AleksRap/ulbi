@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from 'react';
-import { classNames } from 'shared/lib';
+import cn from 'classnames';
 import cls from './AppLink.module.scss';
 import { Link, LinkProps } from 'react-router-dom';
 
@@ -24,7 +24,7 @@ export const AppLink: FC<PropsWithChildren<AppLinkProps>> = ({
     <Link
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...otherProps}
-      className={classNames(cls.appLink, {}, [className, cls[variant]])}
+      className={cn(cls.appLink, className, cls[variant])}
     >
       {children}
     </Link>

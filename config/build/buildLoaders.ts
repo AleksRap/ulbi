@@ -2,22 +2,14 @@ import { RuleSetRule } from 'webpack';
 import { BuildOptions } from './types/config';
 import { buildCssLoader } from './loaders/buildCssLoader';
 import { buildSvgLoader } from './loaders/buildSvgLoader';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
+import { buildResourceLoader } from './loaders/buildResourceLoader';
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
-  const resourceLoader = {
-    test: /\.(ttf|woff|woff2|eot|png|jpg|gif)$/,
-    type: 'asset/resource',
-  };
-
+  const resourceLoader = buildResourceLoader();
   const svgLoader = buildSvgLoader();
-
   const cssLoader = buildCssLoader(isDev);
-
-  const babelLoader = {
-    test: /\.(jsx?|tsx?)$/,
-    exclude: /node_modules/,
-    use: ['babel-loader'],
-  };
+  const babelLoader = buildBabelLoader();
 
   return [resourceLoader, svgLoader, babelLoader, cssLoader];
 }

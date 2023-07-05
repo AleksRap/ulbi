@@ -4,9 +4,10 @@ import webpack, { WebpackPluginInstance } from 'webpack';
 import { BuildOptions } from './types/config';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
 export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
-  const { paths, isAnalyze } = options;
+  const { paths, isAnalyze, isDev } = options;
 
   return [
     new HTMLWebpackPlugin({
@@ -18,6 +19,8 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css',
     }),
+    isDev && new webpack.HotModuleReplacementPlugin(),
+    isDev && new ReactRefreshWebpackPlugin(),
     isAnalyze && new BundleAnalyzerPlugin(),
   ].filter(Boolean);
 }

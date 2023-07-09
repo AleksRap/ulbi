@@ -18,3 +18,4 @@ declare module 'shared/*';
 declare module 'entities/*';
 declare module 'widgets/*';
 declare module 'pages/*';
+declare module 'app/*';

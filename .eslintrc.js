@@ -12,6 +12,7 @@ module.exports = {
     'prettier',
     'plugin:i18next/recommended',
     'plugin:storybook/recommended',
+    'plugin:react-hooks/recommended',
   ],
   overrides: [],
   parser: '@typescript-eslint/parser',
@@ -19,7 +20,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
   rules: {
     'react/function-component-definition': [
       'error',
@@ -37,6 +38,7 @@ module.exports = {
     ],
     'react/button-has-type': 'error',
     'react/jsx-props-no-spreading': 'warn',
+    'react-hooks/exhaustive-deps': 'error',
   },
   settings: {
     react: {

@@ -14,4 +14,10 @@
 
   // Анимация
   --transition-time: 0.2s;
+
+  // Индексы
+  --modal-z-index: 10;
+
+  // Оверлей
+  --overlay-color: var(--bg-color);
 }

@@ -1,5 +1,5 @@
 import { StoryContext, StoryFn } from '@storybook/react';
-import { Theme, ThemeContext } from 'features/ThemeSwitcher';
+import { Theme, ThemeProvider } from 'features/ThemeSwitcher';
 import { useEffect, useState } from 'react';
 
 export const ThemeDecorator = (Story: StoryFn, context: StoryContext) => {
@@ -7,23 +7,18 @@ export const ThemeDecorator = (Story: StoryFn, context: StoryContext) => {
 
   const [theme, setTheme] = useState(Theme.LIGHT);
 
-  const defaultProps = {
-    theme,
-    setTheme,
-  };
-
   useEffect(() => {
     setTheme(currentTheme);
   }, [currentTheme]);
 
   return (
-    <ThemeContext.Provider value={defaultProps}>
+    <ThemeProvider initialTheme={theme}>
       <div
         className={`app ${theme}`}
         style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
       >
         <Story />
       </div>
-    </ThemeContext.Provider>
+    </ThemeProvider>
   );
 };

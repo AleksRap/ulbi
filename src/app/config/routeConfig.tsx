@@ -1,20 +1,22 @@
 import { RouteProps } from 'react-router-dom';
-import { AppRoutes, RoutePath } from 'shared/config';
-import { AboutPage, MainPage, Page404 } from 'pages';
+import { RoutePath } from 'shared/config';
+import { AboutPage } from 'pages/AboutPage';
+import { MainPage } from 'pages/MainPage';
+import { Page404 } from 'pages/Page404';
 
 export const routeConfig: RouteProps[] = [
   {
-    path: RoutePath[AppRoutes.MAIN],
+    path: RoutePath.MAIN,
     element: <MainPage />,
   },
   {
-    path: RoutePath[AppRoutes.ABOUT],
+    path: RoutePath.ABOUT,
     element: <AboutPage />,
   },
 
   // Последний
   {
-    path: RoutePath[AppRoutes.NOT_FOUND],
+    path: RoutePath.NOT_FOUND,
     element: <Page404 />,
   },
 ];

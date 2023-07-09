@@ -1,20 +1,32 @@
 .button {
   cursor: pointer;
   color: var(--inverted-primary-color);
-}
 
-.button.clear {
-  margin: 0;
-  padding: 0;
+  &.clear {
+    margin: 0;
+    padding: 0;
 
-  background: none;
-  border: none;
-  outline: none;
-}
+    background: none;
+    border: none;
+    outline: none;
+  }
 
-.button.outline {
-  padding: 10px 15px;
-  color: var(--primary-color);
-  background: none;
-  border: 1px solid var(--primary-color);
+  &.outline {
+    padding: 10px 15px;
+    color: var(--primary-color);
+    background: none;
+    border: 1px solid var(--primary-color);
+  }
+
+  &.size_s {
+    padding: 2px;
+  }
+
+  &.size_m {
+    padding: 5px;
+  }
+
+  &.size_l {
+    padding: 10px;
+  }
 }

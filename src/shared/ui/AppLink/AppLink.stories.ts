@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { AppLink, AppLinkVariant } from 'shared/ui';
 
-const meta = {
+const meta: Meta<typeof AppLink> = {
   title: 'shared/ui/AppLink',
   component: AppLink,
   tags: ['autodoc'],
@@ -10,10 +10,10 @@ const meta = {
     children: 'link',
     to: '/',
   },
-} as Meta<typeof AppLink>;
+};
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof AppLink>;
 
 export const Primary: Story = {};
 

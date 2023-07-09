@@ -1,8 +1,9 @@
 import { Suspense } from 'react';
 import cn from 'classnames';
-import { Navbar, Sidebar } from 'widgets';
-import { routeConfig } from 'app/config/routeConfig';
-import { useTheme } from 'features';
+import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
+import { routeConfig } from './config/routeConfig';
+import { useTheme } from 'features/ThemeSwitcher';
 import { AppRouter } from 'shared/components';
 
 const App = () => {

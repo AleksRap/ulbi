@@ -1,5 +1,5 @@
 import { StoryContext, StoryFn } from '@storybook/react';
-import { Theme, ThemeContext } from 'features';
+import { Theme, ThemeContext } from 'features/ThemeSwitcher';
 import { useEffect, useState } from 'react';
 
 export const ThemeDecorator = (Story: StoryFn, context: StoryContext) => {

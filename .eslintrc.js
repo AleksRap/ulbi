@@ -38,4 +38,9 @@ module.exports = {
     'react/button-has-type': 'error',
     'react/jsx-props-no-spreading': 'warn',
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 };

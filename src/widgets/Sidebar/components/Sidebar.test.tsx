@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Sidebar } from 'widgets';
+import { Sidebar } from 'widgets/Sidebar';
 
 describe('Sidebar', () => {
   test('Test render', () => {

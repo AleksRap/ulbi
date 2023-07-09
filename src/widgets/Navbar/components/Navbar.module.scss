@@ -9,7 +9,7 @@
 
   background-color: var(--inverted-bg-color);
 
-  transition: all 0.2s ease-in;
+  transition: all var(--transition-time) ease-in;
 }
 
 .links {

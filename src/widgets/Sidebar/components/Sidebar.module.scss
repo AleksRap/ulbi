@@ -1,23 +1,3 @@
-.sidebar {
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-
-  width: var(--sidebar-width);
-  height: calc(100vh - var(--navbar-height));
-  padding: 10px;
-
-  background-color: var(--inverted-bg-color);
-
-  transition: all 0.2s ease-in;
-}
-
-.sidebar.isCollapsed {
-  width: var(--sidebar-width-collapsed);
-  transition: all 0.2s ease-in;
-}
-
 .switchers {
   display: flex;
   flex-direction: column;
@@ -30,4 +10,54 @@
 .btn {
   width: 60px;
   margin-left: auto;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+
+  margin-top: 30px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  white-space: nowrap;
+  opacity: 1;
+  transition: all var(--transition-time) ease-in;
+}
+
+.icon {
+  margin-right: 10px;
+  fill: var(--bg-color);
+}
+
+.sidebar {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+  padding: 10px;
+
+  background-color: var(--inverted-bg-color);
+
+  transition: all var(--transition-time) ease-in;
+
+  &.isCollapsed {
+    width: var(--sidebar-width-collapsed);
+    transition: all var(--transition-time) ease-in;
+
+    .link {
+      opacity: 0;
+      transition: all var(--transition-time) ease-in;
+    }
+  }
 }

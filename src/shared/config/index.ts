@@ -1,2 +1,2 @@
-export { RoutePath, AppRoutes } from './router/routePath';
+export { RoutePath } from './router/routePath';
 export * from './storybook';

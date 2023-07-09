@@ -17,6 +17,10 @@
     "stylelint:fix": "stylelint \"**/*.scss\" --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:screenshots": "loki test",
+    "test:screenshots:ok": "loki approve",
+    "test:screenshots:report": "npm run test:screenshots:report:json && npm run test:screenshots:report:html",
+    "test:screenshots:report:json": "node scripts/generate-visual-json-report.js",
+    "test:screenshots:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "test:screenshots:ci": "loki --requireReference --reactUri file:./storybook-static",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
@@ -73,6 +77,7 @@
     "mini-css-extract-plugin": "2.7.6",
     "postcss-scss": "4.0.6",
     "prettier": "3.0.0",
+    "reg-cli": "0.17.7",
     "sass": "1.63.6",
     "sass-loader": "13.3.2",
     "storybook": "7.0.26",
@@ -103,6 +108,7 @@
   },
   "overrides": {
     "semver": "7.5.2",
-    "uuid": "9.0.0"
+    "uuid": "9.0.0",
+    "trim-newlines": "3.0.1"
   }
 }

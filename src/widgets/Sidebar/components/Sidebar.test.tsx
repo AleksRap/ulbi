@@ -1,16 +1,17 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Sidebar } from 'widgets/Sidebar';
+import { componentRender } from 'shared/lib';
 
 describe('Sidebar', () => {
   test('Test render', () => {
-    render(<Sidebar />);
+    componentRender(<Sidebar />);
 
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
   });
 
   test('Test toggle', async () => {
-    render(<Sidebar />);
+    componentRender(<Sidebar />);
 
     expect(screen.getByTestId('sidebar')).toHaveClass('isCollapsed');
 

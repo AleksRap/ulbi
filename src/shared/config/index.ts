@@ -1,2 +1,2 @@
 export { RoutePath } from './router/routePath';
-export * from './storybook';
+export { ThemeDecorator, RouterDecorator, StyleDecorator } from './storybook';

@@ -1,1 +1,1 @@
-export { useBoolean } from './useBoolean/useBoolean';
+export { useBoolean } from './useBoolean';

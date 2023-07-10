@@ -1,2 +1,2 @@
-export { ErrorBoundary } from './components/ErrorBoundary';
-export { BugButton } from './components/BugButton';
+export * from './components/ErrorBoundary';
+export * from './components/BugButton';

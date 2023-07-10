@@ -1,3 +1,3 @@
-export * from './AppRouter';
-export * from './PageLoader';
-export * from './ErrorBoundary';
+export { AppRouter } from './AppRouter';
+export { PageLoader } from './PageLoader';
+export { BugButton, ErrorBoundary } from './ErrorBoundary';

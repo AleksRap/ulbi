@@ -14,6 +14,9 @@ export default ({ config }: { config: Configuration }) => {
   };
 
   config.resolve.modules.push(paths.src);
+  config.resolve.alias = {
+    entities: path.resolve(__dirname, '..', '..', 'src', 'entities'),
+  };
   config.resolve.extensions.push('.ts', '.tsx');
 
   config.module.rules = config.module.rules.map((rule: RuleSetRule) => {

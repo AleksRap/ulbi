@@ -1,5 +1,11 @@
 import type { Preview } from '@storybook/react';
-import { RouterDecorator, StyleDecorator, ThemeDecorator } from 'shared/config';
+import {
+  RouterDecorator,
+  StyleDecorator,
+  ThemeDecorator,
+  SuspenseDecorator,
+  ReduxDecorator,
+} from 'shared/config';
 import { Theme } from 'features/ThemeSwitcher';
 
 const preview: Preview = {
@@ -12,7 +18,7 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [StyleDecorator, RouterDecorator, ThemeDecorator],
+  decorators: [StyleDecorator, RouterDecorator, ThemeDecorator, SuspenseDecorator, ReduxDecorator],
   globalTypes: {
     theme: {
       name: 'Тема',

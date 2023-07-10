@@ -12,10 +12,3 @@ declare module '*.png';
 declare module '*.jpg';
 declare module '*.jpeg';
 declare module '*.jpeg';
-
-declare module 'features/*';
-declare module 'shared/*';
-declare module 'entities/*';
-declare module 'widgets/*';
-declare module 'pages/*';
-declare module 'app/*';

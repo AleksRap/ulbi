@@ -5,16 +5,19 @@ import { ThemeProvider } from 'features/ThemeSwitcher';
 import 'shared/config/i18n/i18n';
 import { ErrorBoundary } from 'shared/components';
 import { createRoot } from 'react-dom/client';
+import { StoreProvider } from './app/providers';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-  <BrowserRouter>
-    <ErrorBoundary>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    </ErrorBoundary>
-  </BrowserRouter>,
+  <StoreProvider>
+    <BrowserRouter>
+      <ErrorBoundary>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </ErrorBoundary>
+    </BrowserRouter>
+  </StoreProvider>,
 );

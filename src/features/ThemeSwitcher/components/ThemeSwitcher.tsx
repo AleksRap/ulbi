@@ -10,13 +10,13 @@ interface ThemeSwitcherProps {
 }
 
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, handleToggleTheme } = useTheme();
 
   return (
     <Button
       variant={ButtonVariant.CLEAR}
       className={className}
-      onClick={toggleTheme}
+      onClick={handleToggleTheme}
     >
       <ThemeIcon className={cn(cls.icon, cls[theme])} />
     </Button>

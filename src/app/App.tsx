@@ -1,16 +1,15 @@
 import { Suspense } from 'react';
-import cn from 'classnames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { routeConfig } from './config/routeConfig';
-import { useTheme } from 'features/ThemeSwitcher';
 import { AppRouter } from 'shared/components';
+import { useTheme } from 'features/ThemeSwitcher';
 
 const App = () => {
-  const { theme } = useTheme();
+  useTheme();
 
   return (
-    <div className={cn('app', {}, [theme])}>
+    <div className={'app'}>
       <Suspense>
         <Navbar />
         <div className='content-page'>

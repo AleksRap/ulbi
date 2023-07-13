@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import { StateSchema, StoreProvider } from 'app/providers';
 import { DeepPartial } from '@reduxjs/toolkit';
+import { ThemeProvider } from '../../../../features/ThemeSwitcher';
 
 export interface ComponentRenderOptions {
   initialState?: DeepPartial<StateSchema>;
@@ -13,8 +14,10 @@ export const componentRender = (
   { initialState }: ComponentRenderOptions = {},
 ) => {
   return render(
-    <StoreProvider initialState={initialState}>
-      <BrowserRouter>{component}</BrowserRouter>
-    </StoreProvider>,
+    <ThemeProvider>
+      <StoreProvider initialState={initialState}>
+        <BrowserRouter>{component}</BrowserRouter>
+      </StoreProvider>
+    </ThemeProvider>,
   );
 };

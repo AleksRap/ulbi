@@ -20,5 +20,9 @@
       "module": "CommonJS"
     }
   },
-  "include": ["./config/jest/setupTests.ts", "src"]
+  "include": [
+    "./config/jest/setupTests.ts",
+    "src",
+    "storybook-static/sb-preview/runtime.js"
+  ]
 }

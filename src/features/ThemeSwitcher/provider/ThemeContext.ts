@@ -5,6 +5,8 @@ export enum Theme {
   DARK = 'dark',
 }
 
+export const DEFAULT_THEME = Theme.LIGHT;
+
 export const LOCAL_STORAGE_THEME_KEY = 'theme';
 
 export interface ThemeContextProps {

@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react';
+
 import {
   RouterDecorator,
   StyleDecorator,
@@ -6,7 +7,7 @@ import {
   SuspenseDecorator,
   ReduxDecorator,
 } from 'shared/config';
-import { Theme } from 'features/ThemeSwitcher';
+import { Theme, LOCAL_STORAGE_THEME_KEY } from 'features/ThemeSwitcher';
 
 const preview: Preview = {
   parameters: {
@@ -23,7 +24,7 @@ const preview: Preview = {
     theme: {
       name: 'Тема',
       description: 'Темы для компонентов',
-      defaultValue: Theme.LIGHT,
+      defaultValue: localStorage.getItem(LOCAL_STORAGE_THEME_KEY) ?? Theme.LIGHT,
       toolbar: {
         icon: 'circlehollow',
         items: [

@@ -1,16 +1,19 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { BugButton } from 'shared/components';
 import cls from './MainPage.module.scss';
-import { Counter } from 'entities/Counter';
+import { Input } from 'shared/ui';
 
 const MainPage = () => {
   const { t } = useTranslation('main');
+  const [value, setValue] = useState('');
 
   return (
     <div className={cls.mainPage}>
       {t('Главная страница')}
-      <BugButton className={cls.btn} />
-      <Counter />
+      <Input
+        value={value}
+        onChange={setValue}
+      />
     </div>
   );
 };

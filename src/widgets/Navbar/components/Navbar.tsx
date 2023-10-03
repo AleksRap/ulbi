@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import cn from 'classnames';
 import cls from './Navbar.module.scss';
-import { Button, ButtonVariant, Modal } from 'shared/ui';
+import { Button, ButtonVariant } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'shared/hooks';
+import { LoginModal } from 'features/AuthByUsername';
 
 interface NavbarProps {
   className?: string;
@@ -22,12 +23,12 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
       >
         {t('Войти')}
       </Button>
-      <Modal
+      <LoginModal
         isOpen={isShowModal}
         onClose={handleClose}
       >
         {t('Текст рыба')}
-      </Modal>
+      </LoginModal>
     </div>
   );
 };

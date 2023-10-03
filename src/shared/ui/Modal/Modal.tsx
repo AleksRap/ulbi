@@ -6,6 +6,7 @@ import { Portal } from '../Portal';
 
 interface ModalProps {
   isOpen?: boolean;
+  lazy?: boolean;
   onClose?: () => void;
   className?: string;
 }
@@ -31,7 +32,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
   }, [onClose]);
 
   const handleClickOverlay = (e: MouseEvent<HTMLDivElement>) => {
-    if (e.target === contentRef.current) return;
+    if (contentRef.current.contains(e.target as Node)) return;
     handleCloseModal();
   };
 

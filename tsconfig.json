@@ -21,8 +21,8 @@
     }
   },
   "include": [
-    "./config/jest/setupTests.ts",
     "src",
+    "config",
     "webpack.config.ts",
     "json-server",
     "storybook-static/sb-preview/runtime.js"

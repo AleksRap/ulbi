@@ -4,3 +4,4 @@ export { Loader } from './Loader';
 export { Modal } from './Modal';
 export { Portal } from './Portal';
 export { Input } from './Input';
+export { Text, TextVariant } from './Text';

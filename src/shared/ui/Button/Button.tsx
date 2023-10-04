@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
 import cn from 'classnames';
 import cls from './Button.module.scss';
+import { Loader } from '../Loader';
 
 export enum ButtonVariant {
   CLEAR = 'clear',
@@ -16,6 +17,7 @@ export enum ButtonSize {
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   size?: ButtonSize;
+  isLoading?: boolean;
   className?: string;
 }
 
@@ -23,6 +25,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   children,
   className,
   variant,
+  isLoading,
   size = ButtonSize.M,
   ...otherProps
 }) => {
@@ -32,8 +35,9 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
       {...otherProps}
       type='button'
       className={cn(cls.button, className, cls[variant], cls[size])}
+      disabled={isLoading}
     >
-      {children}
+      {isLoading ? <Loader /> : children}
     </button>
   );
 };

@@ -45,3 +45,9 @@ export const Size_L: Story = {
     size: ButtonSize.L,
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    isLoading: true,
+  },
+};

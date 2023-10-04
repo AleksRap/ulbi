@@ -1,0 +1,7 @@
+.text {
+  color: var(--primary-color);
+
+  &.error {
+    color: var(--error-color);
+  }
+}

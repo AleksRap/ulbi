@@ -1,5 +1,6 @@
-/build
-/node_modules
-/.idea
+build
+node_modules
+.idea
 pnpm-lock.yaml
-/storybook-static
+storybook-static
+.loki

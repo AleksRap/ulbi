@@ -2,9 +2,4 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npm run build
-npm run tsc
-npm run eslint
-npm run stylelint
-npm run test:unit
-npm run storybook:build
-npm run test:screenshots:ci
+npx lint-staged

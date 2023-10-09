@@ -1,6 +1,6 @@
-import { ComponentProps, FC } from 'react';
-import { Modal } from 'shared/ui';
-import { LoginForm } from '../LoginForm/LoginForm';
+import { ComponentProps, FC, Suspense } from 'react';
+import { Loader, Modal } from 'shared/ui';
+import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 
 type LoginModalProps = ComponentProps<typeof Modal>;
 
@@ -11,7 +11,9 @@ export const LoginModal: FC<LoginModalProps> = ({ className, isOpen, onClose }) 
       isOpen={isOpen}
       onClose={onClose}
     >
-      <LoginForm />
+      <Suspense fallback={<Loader />}>
+        <LoginFormAsync />
+      </Suspense>
     </Modal>
   );
 };

@@ -15,13 +15,14 @@ import { DynamicModuleLoader, ReducerList } from 'shared/lib';
 
 interface LoginFormProps {
   className?: string;
+  onSuccess: () => void;
 }
 
 const initialReducers: ReducerList = {
   loginForm: loginReducer,
 };
 
-const LoginFormMemo: FC<LoginFormProps> = ({ className }) => {
+const LoginFormMemo: FC<LoginFormProps> = ({ className, onSuccess }) => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
 
@@ -44,9 +45,11 @@ const LoginFormMemo: FC<LoginFormProps> = ({ className }) => {
     [dispatch],
   );
 
-  const handleLogin = useCallback(() => {
-    dispatch(loginByUsername({ username, password }));
-  }, [dispatch, password, username]);
+  const handleLogin = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }));
+
+    if (result.meta.requestStatus === 'fulfilled') onSuccess();
+  }, [dispatch, onSuccess, password, username]);
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>

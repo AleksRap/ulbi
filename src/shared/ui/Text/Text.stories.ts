@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Text, TextVariant } from './Text';
 
 const meta: Meta<typeof Text> = {
-  title: 'shared/ui/Text',
+  title: 'shared/components/Text',
   component: Text,
   tags: ['autodoc'],
   args: {

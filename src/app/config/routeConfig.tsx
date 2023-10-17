@@ -3,6 +3,7 @@ import { RoutePath } from 'shared/config';
 import { AboutPage } from 'pages/AboutPage';
 import { MainPage } from 'pages/MainPage';
 import { Page404 } from 'pages/Page404';
+import { ProfilePage } from 'pages/ProfilePage';
 
 export const routeConfig: RouteProps[] = [
   {
@@ -12,6 +13,10 @@ export const routeConfig: RouteProps[] = [
   {
     path: RoutePath.ABOUT,
     element: <AboutPage />,
+  },
+  {
+    path: RoutePath.PROFILE,
+    element: <ProfilePage />,
   },
 
   // Последний

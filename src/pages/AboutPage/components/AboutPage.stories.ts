@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { AboutPage } from 'pages/AboutPage';
+import AboutPage from './AboutPage';
 
 const meta = {
   title: 'pages/AboutPage',

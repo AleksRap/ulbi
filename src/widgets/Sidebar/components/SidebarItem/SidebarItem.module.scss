@@ -1,0 +1,15 @@
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  white-space: nowrap;
+  opacity: 1;
+  transition: all var(--transition-time) ease-in;
+}
+
+.icon {
+  margin-right: 10px;
+  fill: var(--bg-color);
+}

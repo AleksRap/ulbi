@@ -3,6 +3,7 @@ import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { EnhancedStore } from '@reduxjs/toolkit/dist/configureStore';
 import { AnyAction, CombinedState, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
+import { ProfileSchema } from 'entities/Profile';
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -10,6 +11,7 @@ export interface StateSchema {
 
   // Асинхронные редьюсеры
   loginForm?: LoginSchema;
+  profile?: ProfileSchema;
 }
 
 export interface ReducerManager {

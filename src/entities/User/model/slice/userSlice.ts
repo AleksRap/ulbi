@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { User, UserSchema } from '../types/user';
-import { USER_LOCAL_STORAGE_KEY } from '../../../../shared/constants';
+import { USER_LOCAL_STORAGE_KEY } from 'shared/constants';
 
 const initialState: UserSchema = {};
 
-export const userSlice = createSlice({
+const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {

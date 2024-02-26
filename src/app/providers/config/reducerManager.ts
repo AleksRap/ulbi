@@ -1,5 +1,5 @@
 import { combineReducers, ReducersMapObject } from '@reduxjs/toolkit';
-import { ReducerManager, StateSchema } from './StateSchema';
+import { ReducerManager, StateSchema, AsyncStateSchema } from './StateSchema';
 
 export function createReducerManager(
   initialReducers: ReducersMapObject<StateSchema>,
@@ -8,18 +8,21 @@ export function createReducerManager(
 
   let combinedReducer = combineReducers(reducers);
 
-  let keysToRemove: (keyof StateSchema)[] = [];
+  let keysToRemove: (keyof AsyncStateSchema)[] = [];
 
   return {
     getReducerMap: () => reducers,
 
     reduce: (state, action) => {
       if (keysToRemove.length > 0) {
-        state = { ...state };
+        // Если есть что удалять, значит уже точно импользуется полный стейт состоящий из асинхронного и синхронного
+        const fullState = { ...state } as StateSchema;
 
         for (const key of keysToRemove) {
-          delete state[key];
+          if (key in fullState) delete fullState[key];
         }
+
+        state = fullState;
 
         keysToRemove = [];
       }

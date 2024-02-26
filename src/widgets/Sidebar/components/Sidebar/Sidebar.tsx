@@ -31,7 +31,7 @@ const SidebarMemo: FC<SidebarProps> = ({ className }) => {
         onClick={handlerToggle}
         data-testid='sidebar-toggle'
       >
-        {t(isCollapsed ? 'Открыть' : 'Закрыть')}
+        {isCollapsed ? t('Открыть') : t('Закрыть')}
       </Button>
 
       <div className={cls.items}>

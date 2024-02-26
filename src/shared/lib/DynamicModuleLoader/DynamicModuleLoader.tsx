@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren, useEffect } from 'react';
 import { useStore } from 'react-redux';
-import { ReduxStoreWithManager, StateSchema } from 'app/providers';
+import { ReduxStoreWithManager, StateSchema, AsyncStateSchema } from 'app/providers';
 import { useAppDispatch } from '../../hooks';
 import { Reducer } from '@reduxjs/toolkit';
 
@@ -8,7 +8,7 @@ export type ReducerList = {
   [name in keyof StateSchema]?: Reducer;
 };
 
-type ReducersListEntry = [keyof StateSchema, Reducer];
+type ReducersListEntry = [keyof AsyncStateSchema, Reducer];
 
 interface DynamicModuleLoaderProps {
   reducers: ReducerList;

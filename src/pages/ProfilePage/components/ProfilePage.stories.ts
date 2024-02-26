@@ -22,7 +22,7 @@ export const WithData: Story = {
         profile: { isLoading: false, readonly: true },
       },
       {
-        loginForm: profileReducer,
+        profile: profileReducer,
       },
     ),
   ],

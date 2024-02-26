@@ -1,4 +1,4 @@
-import { DeepPartial } from '@reduxjs/toolkit';
+import { DeepPartial } from 'shared/types';
 import { StateSchema } from 'app/providers';
 import { getLoginPassword } from './getLoginPassword';
 describe('getLoginPassword.test', () => {

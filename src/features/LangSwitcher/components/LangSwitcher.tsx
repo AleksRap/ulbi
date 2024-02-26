@@ -20,7 +20,7 @@ const LangSwitcherMemo: FC<LangSwitcherProps> = ({ short = true, className }) =>
       className={className}
       onClick={handleChangeLanguage}
     >
-      {t(short ? 'Короткий язык' : 'Язык')}
+      {short ? t('Короткий язык') : t('Язык')}
     </Button>
   );
 };

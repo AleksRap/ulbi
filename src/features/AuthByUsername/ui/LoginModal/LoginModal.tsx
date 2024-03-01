@@ -2,7 +2,7 @@ import { ComponentProps, FC, Suspense } from 'react';
 import { Loader, Modal } from 'shared/ui';
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 
-type LoginModalProps = ComponentProps<typeof Modal>;
+type LoginModalProps = ComponentProps<typeof Modal> & { onClose: () => void };
 
 export const LoginModal: FC<LoginModalProps> = ({ className, isOpen, onClose }) => {
   return (

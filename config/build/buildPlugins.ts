@@ -22,5 +22,5 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
     isDev && new webpack.HotModuleReplacementPlugin(),
     isDev && new ReactRefreshWebpackPlugin(),
     isAnalyze && new BundleAnalyzerPlugin(),
-  ].filter(Boolean);
+  ].filter(Boolean) as WebpackPluginInstance[];
 }

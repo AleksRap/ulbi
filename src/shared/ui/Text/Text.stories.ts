@@ -3,11 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Text, TextVariant } from './Text';
 
 const meta: Meta<typeof Text> = {
-  title: 'shared/components/Text',
+  title: 'shared/components/Title',
   component: Text,
   tags: ['autodoc'],
   args: {
-    children: 'Text for text component',
+    children: 'Title for text component',
   },
 };
 

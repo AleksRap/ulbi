@@ -4,6 +4,7 @@
     "paths": {
       "$*": ["./src/*"]
     },
+    "strict": true,
     "skipLibCheck": true,
     "outDir": "./dist/",
     "noImplicitAny": true,

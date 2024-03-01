@@ -5,3 +5,4 @@ export { Modal } from './Modal';
 export { Portal } from './Portal';
 export { Input } from './Input';
 export { Text, TextVariant } from './Text';
+export { Title } from './Title';

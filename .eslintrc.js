@@ -36,7 +36,6 @@ module.exports = {
         extensions: ['.tsx', '.jsx'],
       },
     ],
-    'react/button-has-type': 'error',
     'react/jsx-props-no-spreading': 'warn',
     'react-hooks/exhaustive-deps': 'error',
   },

@@ -15,9 +15,9 @@ export const componentRender = (
 ) => {
   return render(
     <ThemeProvider>
-      <StoreProvider initialState={initialState as StateSchema}>
-        <BrowserRouter>{component}</BrowserRouter>
-      </StoreProvider>
+      <BrowserRouter>
+        <StoreProvider initialState={initialState as StateSchema}>{component}</StoreProvider>
+      </BrowserRouter>
     </ThemeProvider>,
   );
 };

@@ -7,7 +7,7 @@ const meta: Meta<typeof Button> = {
   component: Button,
   tags: ['autodoc'],
   args: {
-    children: 'Text button',
+    children: 'Title button',
   },
 };
 

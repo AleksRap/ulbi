@@ -1,12 +1,13 @@
 import { FC, PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { createReduxStore } from '../config/store';
-import { AsyncStateSchema, StateSchema } from '../config/StateSchema';
-import { ReducersMapObject } from '@reduxjs/toolkit';
+import { StateSchema } from '../config/StateSchema';
+import { ReducerList } from 'shared/lib';
 
 interface StoreProviderProps {
   initialState?: StateSchema;
-  asyncReducers?: ReducersMapObject<AsyncStateSchema>;
+  asyncReducers?: ReducerList;
 }
 
 export const StoreProvider: FC<PropsWithChildren<StoreProviderProps>> = ({
@@ -14,7 +15,9 @@ export const StoreProvider: FC<PropsWithChildren<StoreProviderProps>> = ({
   asyncReducers,
   children,
 }) => {
-  const store = createReduxStore(initialState, asyncReducers);
+  const navigate = useNavigate();
+
+  const store = createReduxStore(initialState, asyncReducers, navigate);
 
   return <Provider store={store}>{children}</Provider>;
 };

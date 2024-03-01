@@ -13,16 +13,14 @@ export function createReducerManager(
   return {
     getReducerMap: () => reducers,
 
-    reduce: (state, action) => {
+    reducer: (state, action) => {
       if (keysToRemove.length > 0) {
-        // Если есть что удалять, значит уже точно импользуется полный стейт состоящий из асинхронного и синхронного
-        const fullState = { ...state } as StateSchema;
+        // Если есть что удалять, значит уже точно есть стейт
+        state = { ...state } as StateSchema;
 
         for (const key of keysToRemove) {
-          if (key in fullState) delete fullState[key];
+          delete state[key];
         }
-
-        state = fullState;
 
         keysToRemove = [];
       }

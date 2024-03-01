@@ -1,7 +1,7 @@
 import fs from 'fs';
 import jsonServer from 'json-server';
-// import jwt from 'jwt';
 import path from 'path';
+import { isApiError } from './utils';
 
 const server = jsonServer.create();
 
@@ -45,7 +45,10 @@ server.post('/login', (req, res) => {
     return res.status(403).json({ message: 'User not found' });
   } catch (e) {
     console.log(e);
-    return res.status(500).json({ message: e.message });
+
+    if (isApiError(e)) {
+      return res.status(500).json({ message: e.message });
+    }
   }
 });
 

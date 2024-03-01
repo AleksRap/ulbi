@@ -24,16 +24,17 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   children,
   className,
-  variant,
+  variant = ButtonVariant.OUTLINE,
   isLoading,
   size = ButtonSize.M,
+  type = 'button',
   ...otherProps
 }) => {
   return (
     <button
       /* eslint-disable-next-line react/jsx-props-no-spreading */
       {...otherProps}
-      type='button'
+      type={type}
       className={cn(cls.button, className, cls[variant], cls[size])}
       disabled={isLoading}
     >

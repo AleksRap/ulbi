@@ -1,4 +1,13 @@
-import { FC, MouseEvent, PropsWithChildren, useCallback, useEffect, useRef, useState } from 'react';
+import {
+  FC,
+  MouseEvent,
+  MutableRefObject,
+  PropsWithChildren,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import cn from 'classnames';
 import cls from './Modal.module.scss';
 import { ANIMATION_DELAY } from '../../constants';
@@ -18,7 +27,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
   children,
 }) => {
   const contentRef = useRef<HTMLDivElement>(null);
-  const timeoutRef = useRef(null);
+  const timeoutRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
   const [isStartCosing, setIsStartClosing] = useState(false);
 
@@ -32,7 +41,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
   }, [onClose]);
 
   const handleClickOverlay = (e: MouseEvent<HTMLDivElement>) => {
-    if (contentRef.current.contains(e.target as Node)) return;
+    if (contentRef.current?.contains(e.target as Node)) return;
     handleCloseModal();
   };
 

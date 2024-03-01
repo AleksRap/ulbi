@@ -13,14 +13,14 @@ import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginL
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib';
 
+const initialReducers: ReducerList = {
+  loginForm: loginReducer,
+};
+
 interface LoginFormProps {
   className?: string;
   onSuccess: () => void;
 }
-
-const initialReducers: ReducerList = {
-  loginForm: loginReducer,
-};
 
 const LoginFormMemo: FC<LoginFormProps> = ({ className, onSuccess }) => {
   const dispatch = useAppDispatch();
@@ -53,7 +53,7 @@ const LoginFormMemo: FC<LoginFormProps> = ({ className, onSuccess }) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <div className={cn(cls.loginForm, className)}>
+      <form className={cn(cls.loginForm, className)}>
         <Input
           type='text'
           placeholder='login'
@@ -71,12 +71,13 @@ const LoginFormMemo: FC<LoginFormProps> = ({ className, onSuccess }) => {
         {error && <Text variant={TextVariant.error}>{error}</Text>}
 
         <Button
+          type='submit'
           onClick={handleLogin}
           isLoading={isLoading}
         >
           {t('Войти')}
         </Button>
-      </div>
+      </form>
     </DynamicModuleLoader>
   );
 };

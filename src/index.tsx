@@ -8,16 +8,19 @@ import { createRoot } from 'react-dom/client';
 import { StoreProvider } from './app/providers';
 
 const container = document.getElementById('root');
-const root = createRoot(container);
 
-root.render(
-  <StoreProvider>
+if (container) {
+  const root = createRoot(container);
+
+  root.render(
     <BrowserRouter>
-      <ErrorBoundary>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
-      </ErrorBoundary>
-    </BrowserRouter>
-  </StoreProvider>,
-);
+      <StoreProvider>
+        <ErrorBoundary>
+          <ThemeProvider>
+            <App />
+          </ThemeProvider>
+        </ErrorBoundary>
+      </StoreProvider>
+    </BrowserRouter>,
+  );
+}

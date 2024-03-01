@@ -8,7 +8,7 @@ const meta: Meta<typeof Modal> = {
   tags: ['autodoc'],
   args: {
     children:
-      'Text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal',
+      'Title modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal text modal',
   },
 };
 

@@ -10,8 +10,11 @@ export const DEFAULT_THEME = Theme.LIGHT;
 export const LOCAL_STORAGE_THEME_KEY = 'theme';
 
 export interface ThemeContextProps {
-  theme?: Theme;
-  setTheme?: Dispatch<SetStateAction<Theme>>;
+  theme: Theme;
+  setTheme: Dispatch<SetStateAction<Theme>>;
 }
 
-export const ThemeContext = createContext<ThemeContextProps>({});
+export const ThemeContext = createContext<ThemeContextProps>({
+  theme: Theme.LIGHT,
+  setTheme: () => undefined,
+});

@@ -3,9 +3,9 @@ import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 import { BuildEnv, BuildPaths } from './config/build/types/config';
 
 export default (env?: BuildEnv) => {
-  const mode = env.MODE ?? 'development';
+  const mode = env?.MODE ?? 'development';
   const isDev = mode === 'development';
-  const isAnalyze = env.ANALYZE;
+  const isAnalyze = !!env?.ANALYZE;
 
   const paths: BuildPaths = {
     entry: path.resolve(__dirname, 'src', 'index.tsx'),

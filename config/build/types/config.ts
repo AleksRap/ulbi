@@ -11,11 +11,12 @@ export interface BuildPaths {
 export interface BuildEnv {
   MODE: Configuration['mode'];
   ANALYZE: boolean;
+  API_URL: string;
 }
 
 export interface BuildOptions {
-  mode: Configuration['mode'];
+  mode: BuildEnv['MODE'];
   paths: BuildPaths;
   isDev: boolean;
-  isAnalyze: boolean;
+  isAnalyze: BuildEnv['ANALYZE'];
 }
